@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task History</title>
+</head>
+<body>
+{% if history_tasks %}
+    <ul>
+    {% for task in history_tasks %}
+        <li><a href="{%  url 'tasks:detail' task.id %}">{{ task.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no Task history at the moment.</p>
+{% endif %}
+</body>
+</html>
